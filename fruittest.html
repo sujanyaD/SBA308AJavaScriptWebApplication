@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Fruit Selector</title>
+</head>
+<body>
+    <select id="fruitSelect">
+        <option value="">Select a fruit</option>
+    </select>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            axios.get("https://cors-anywhere.herokuapp.com/https://www.fruityvice.com/api/fruit/all")
+                .then(response => {
+                    populateSelect(response.data);
+                })
+                .catch(error => {
+                    console.error("There was a problem fetching the fruits:", error);
+                });
+        });
+
+        function populateSelect(fruits) {
+            const select = document.getElementById("fruitSelect");
+            fruits.forEach(fruit => {
+                const option = document.createElement("option");
+                option.value = fruit.name;
+                option.textContent = fruit.name;
+                select.appendChild(option);
+            });
+        }
+    </script>
+</body>
+</html>
