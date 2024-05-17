@@ -12,10 +12,10 @@ export async function populateFruitData() {
     // write forloop to iterate through list  of items in dropdown.
     for (let i = 0; i < frtData.length; i++) {
         const fruitVal = document.createElement('option'); // creating element for list <option></option>
-         fruitVal.innerHTML = frtData[i].name; // setting innerHTMl for my fruitlist
+        fruitVal.innerHTML = frtData[i].name; // setting innerHTMl for my fruitlist
         selectFruit.appendChild(fruitVal); // selectFruit=<option>fruitname</option>
     }
-    
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -31,7 +31,7 @@ document.getElementById("SrchBtn").addEventListener("click", function () {
 });
 
 // function to search fruit genus
-export async function populateSearchResults(srchText){
+export async function populateSearchResults(srchText) {
     const frutGen = await getfruitInfoByGenus(srchText);
 
     var list = document.getElementById('nutritionInfo');
@@ -40,7 +40,7 @@ export async function populateSearchResults(srchText){
         // Create the list item:
         var item = document.createElement('li');
         // Set its contents:
-        item.appendChild(document.createTextNode( "calories :"+ nutrs.calories+ "fat:"+ nutrs.fat));
+        item.appendChild(document.createTextNode("calories :" + nutrs.calories + "fat:" + nutrs.fat));
         // Add it to the list:
         list.appendChild(item);
     }
