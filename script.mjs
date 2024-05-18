@@ -37,6 +37,7 @@ document.getElementById("Fruits").addEventListener("change", function () {
     list.appendChild(item);
 }
 });
+//fruit genus function
 export async function populateSearchResults(srchText) {
     const frutGen = await getfruitInfoByGenus(srchText);
 console.log(frutGen);
@@ -56,4 +57,5 @@ console.log(frutGen);
 document.getElementById("PostBtn").addEventListener("click", function () {
     let postNewData = document.getElementById('nutritionInfo').value;
     putNewData(postNewData);
+
 });
