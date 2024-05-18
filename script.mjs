@@ -1,6 +1,6 @@
 
 //importing Data from dataforFruits
-import { getfruitInfoByGenus, getFruitsdata } from "./dataFruits.mjs";
+import { getfruitInfoByGenus,getFruitsdata,putNewData} from "./dataFruits.mjs";
 let fruitData =[];
 //funtion to populate fruit data
 export async function populateFruitData() {
@@ -37,12 +37,6 @@ document.getElementById("Fruits").addEventListener("change", function () {
     list.appendChild(item);
 }
 });
-
-// document.getElementById("SrchBtn").addEventListener("click", function () {
-//     let srchText = document.getElementById('frutsearch').value;
-//     populateSearchResults(srchText);
-// });
-// function to search fruit genus
 export async function populateSearchResults(srchText) {
     const frutGen = await getfruitInfoByGenus(srchText);
 console.log(frutGen);
@@ -58,3 +52,8 @@ console.log(frutGen);
         list.appendChild(item);
     }
 }
+    
+document.getElementById("PostBtn").addEventListener("click", function () {
+    let postNewData = document.getElementById('nutritionInfo').value;
+    putNewData(postNewData);
+});
