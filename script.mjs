@@ -57,5 +57,4 @@ console.log(frutGen);
         // Add it to the list:
         list.appendChild(item);
     }
-
 }
