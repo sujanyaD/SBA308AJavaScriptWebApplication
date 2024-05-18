@@ -17,9 +17,9 @@ console.log(frtData);
         selectFruit.appendChild(fruitVal); // selectFruit=<option>fruitname</option>
     }
 }
-document.addEventListener("DOMContentLoaded", function () {
-    populateFruitData();
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//     populateFruitData();
+// });
 document.getElementById("Fruits").addEventListener("change", function () {
     let selectedFruit=document.getElementById('Fruits').value;
     console.log(selectedFruit);
@@ -38,10 +38,10 @@ document.getElementById("Fruits").addEventListener("change", function () {
 }
 });
 
-document.getElementById("SrchBtn").addEventListener("click", function () {
-    let srchText = document.getElementById('frutsearch').value;
-    populateSearchResults(srchText);
-});
+// document.getElementById("SrchBtn").addEventListener("click", function () {
+//     let srchText = document.getElementById('frutsearch').value;
+//     populateSearchResults(srchText);
+// });
 // function to search fruit genus
 export async function populateSearchResults(srchText) {
     const frutGen = await getfruitInfoByGenus(srchText);
